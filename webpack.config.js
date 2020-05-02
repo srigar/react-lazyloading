@@ -2,7 +2,7 @@ const path = require("path");
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-  entry: "./src/multiselect/multiselect.component.js",
+  entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: "index.js",
