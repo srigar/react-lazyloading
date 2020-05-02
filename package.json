@@ -1,5 +1,5 @@
 {
-  "name": "react-lazyloading",
+  "name": "react-lazy-loading",
   "version": "1.0.0",
   "description": "React lazy loading component",
   "main": "build/index.js",

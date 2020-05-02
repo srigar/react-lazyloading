@@ -5,7 +5,7 @@ React Lazy Loading - It is easy to integrate with React to Lazyload components, 
 
 React Lazy Load requires React v16.8 or later.
 ```
-npm install --save react-lazyloading
+npm install --save react-lazy-loading
 ```
 
 ## Demo
