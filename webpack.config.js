@@ -25,22 +25,6 @@ module.exports = {
         use: {
           loader: "babel-loader"
         }
-      },
-      {
-        test: /\.css$/,
-        use: [
-          "style-loader",
-          {
-            loader: "css-loader",
-            options: {
-              modules: true
-            }
-          }
-        ]
-      },
-      { 
-        test: /\.(png|woff|woff2|eot|ttf|svg)$/, 
-        loader: 'url-loader?limit=100000' 
       }
     ]
   },

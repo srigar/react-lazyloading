@@ -2,22 +2,38 @@ import { useState, useEffect } from 'react';
 
 const defaultConfig = {
   root: null,
-  rootMargin: '0px',
-  threshold: 1.0
+  threshold: 1.0,
+  rootMargin: '0px'
 };
 
-const useVisibilityHook = (options = {}) => {
-    const [isVisible, setIsVisible] = useState(false);
+const useVisibilityHook = (options = {}, visible = false) => {
+    let observer;
+    const [isVisible, setIsVisible] = useState(visible);
     const [element, setElement] = useState(null);
+
+    const forceVisible = () => {
+        setIsVisible(true);
+    };
+
+    const forceCheck = () => {
+        observer.unobserve(element);
+        observer.observe(element);
+    };
 
     const visibilityCallBack = ([entry]) => {
         if (entry.isIntersecting) {
             setIsVisible(true);
+            observer.disconnect();
         }
     };
 
     useEffect(() => {
-        let observer;
+        if (visible) {
+            forceVisible();
+        }
+    }, [visible])
+
+    useEffect(() => {
         if (!element) {
             return;
         }
@@ -26,10 +42,10 @@ const useVisibilityHook = (options = {}) => {
             ...options
         });
         observer.observe(element);
-        return () => observer && observer.disconnect();
-    }, [element, options.root, options.rootMargin, root.threshold]);
+        return () => observer && observer.disconnect && observer.disconnect();
+    }, [element, options.root, options.rootMargin, options.threshold]);
 
-    return { setElement, isVisible };
+    return { setElement, isVisible, forceVisible, forceCheck };
 }
 
 export default useVisibilityHook;
