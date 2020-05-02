@@ -1,11 +1,11 @@
-# REACT LAZYLOAD 
+# REACT LAZY LOAD 
 React Lazy Loading - It is easy to integrate with React to Lazyload components, Images, etc. Implementing "infinite scrolling" web sites, where more and more content is loaded and rendered as you scroll, so that the user doesn't have to flip through pages. Internally used [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
 
 ## Installation
 
 React Lazy Load requires React v16.8 or later.
 ```
-npm install --save react-lazy-loading
+npm install --save react-lazyloadable
 ```
 
 ## Demo
