@@ -8,9 +8,6 @@ React Lazy Load requires React v16.8 or later.
 npm install --save react-observer-api
 ```
 
-## Demo
-
-
 ## Usage
 ### 1. Using Hook
 ```isVisible``` will be true once DOM is visible in the viewport.  
@@ -135,6 +132,29 @@ The above same can achieved through Component as well. Need to wrap ```LazyLoad`
 
 ## Note
 For IE support, need to add [polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill)
+
+You can import the polyfill directly or use a service like polyfill.io to add it when needed.
+```
+yarn add intersection-observer
+```
+Then import it in your app:
+```
+import 'intersection-observer'
+```
+
+If you are using Webpack (or similar) you could use dynamic imports, to load the Polyfill only if needed. A basic implementation could look something like this:
+
+```
+    /**
+    * Do feature detection, to figure out which polyfills needs to be imported.
+    **/
+    async function loadPolyfills() {
+        if (typeof window.IntersectionObserver === 'undefined') {
+            await import('intersection-observer')
+        }
+    }
+
+```
 
 ## Licence
 MIT
