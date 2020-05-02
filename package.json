@@ -1,6 +1,6 @@
 {
   "name": "react-observer-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React lazy loading component",
   "main": "build/index.js",
   "scripts": {
