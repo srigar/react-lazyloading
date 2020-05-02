@@ -1,0 +1,52 @@
+{
+  "name": "react-lazyloading",
+  "version": "1.0.0",
+  "description": "React lazy loading component",
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "webpack-dev-server",
+    "build": "webpack"
+  },
+  "author": "srigar s",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/srigar/react-lazyloading"
+  },
+  "dependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.1",
+    "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^2.1.2",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "babel": {
+    "presets": [
+      "@babel/env",
+      "@babel/react"
+    ]
+  },
+  "keywords": [
+    "npm",
+    "react",
+    "lazy",
+    "load",
+    "lazyload",
+    "lazyloading",
+    "hooks",
+    "react-lazy-load",
+    "react-lazyloading",
+    "react lazy loading",
+    "react lazy load"
+  ]
+}
