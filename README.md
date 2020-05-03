@@ -1,5 +1,13 @@
 # REACT LAZY LOAD 
-React Lazy Loading - It is easy to integrate with React to Lazyload components, Images, etc. Implementing "infinite scrolling" web sites, where more and more content is loaded and rendered as you scroll, so that the user doesn't have to flip through pages. Internally used [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
+React Lazy Loading - It is easy to integrate with React to Lazyload components, Images, etc. It will monitor element and tell you when element enters into the viewport. So that can perform any operation when the component in viewport and initial load will get reduce. Implementing "infinite scrolling" web sites, where more and more content is loaded and rendered as you scroll, so that the user doesn't have to flip through pages. Internally used [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
+
+## Features
+* 🎧 **Hooks or Component** - With ```useVisibilityHook``` it's easier to monitor elements and perform any operations.
+* 🔥 **Performance** - No multiple listener for scroll, resize, etc.
+* 🔦 **Bundle** - Light weight, ~3.5kb
+* 🎁 **Features** - ```forceVisible```, ```forceCheck``` to manually perform operations.
+* 💥 **Memory optimization** - Observer will disconnect once component reached viewport/unmount
+
 
 ## Installation
 
@@ -12,97 +20,97 @@ npm install --save react-observer-api
 ### 1. Using Hook
 ```isVisible``` will be true once DOM is visible in the viewport.  
 ```setElement``` need to pass it to the ref as shown below.  
-```
-    import { useVisibilityHook } from 'react-lazyloading';
+```jsx
+import { useVisibilityHook } from 'react-lazyloading';
 
-    export default () => {
-        const { setElement, isVisible } = useVisibilityHook();
+export default () => {
+    const { setElement, isVisible } = useVisibilityHook();
 
-        useEffect(() => {
-            if (isVisible) {
-                ...Logics/API call can trigger by watching isVisible property
-            }
-        }, [isVisible])
-
-        return {
-            <div ref={setElement}>
-                {isVisible && (
-                    <>
-                        ...Component need to render goes here....
-                    <>
-                )}
-            </div>
+    useEffect(() => {
+        if (isVisible) {
+            ...Logics/API call can trigger by watching isVisible property
         }
+    }, [isVisible])
+
+    return {
+        <div ref={setElement}>
+            {isVisible && (
+                <>
+                    ...Component need to render goes here....
+                <>
+            )}
+        </div>
     }
+}
 ```
 
 #### Config Options - Optional
 
 It allow to pass config options as param (optional). 
 
-```
-    {
-        root: null,
-        rootMargin: '0px',
-        threshold: 1.0
-    }
+```js
+{
+    root: null,
+    rootMargin: '0px',
+    threshold: 1.0
+}
 ```
 
 For more details about options and usage, [Click here](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#Intersection_observer_concepts_and_usage) 
 
-```
-    import { useVisibilityHook } from 'react-lazyloading';
+```jsx
+import { useVisibilityHook } from 'react-lazyloading';
 
-    export default () => {
-        const { setElement, isVisible } = useVisibilityHook({
-            threshold: 0.5,
-            rootMargin: '100px'
-        });
-        ...
-    }
+export default () => {
+    const { setElement, isVisible } = useVisibilityHook({
+        threshold: 0.5,
+        rootMargin: '100px'
+    });
+    ...
+}
 ```
 
 #### Force Visible
 
 For some case, based on condition/logic may need to show the dom before it reaches to viewport. In that scenario, by calling ```forceVisible()``` will load the dom.
 
-```
-    import { useVisibilityHook } from 'react-lazyloading';
+```jsx
+import { useVisibilityHook } from 'react-lazyloading';
 
-    export default () => {
-        const { setElement, isVisible, forceVisible } = useVisibilityHook();
+export default () => {
+    const { setElement, isVisible, forceVisible } = useVisibilityHook();
 
-        useEffect(() => {
-            forceVisible(); // isVisible become true, by manually calling this method.
-        }, [])
-        
-        return {
-            <div ref={setElement}>
-                {isVisible && (
-                    <>
-                        ...Component need to render goes here....
-                    <>
-                )}
-            </div>
-        }
+    useEffect(() => {
+        forceVisible(); // isVisible become true, by manually calling this method.
+    }, [])
+    
+    return {
+        <div ref={setElement}>
+            {isVisible && (
+                <>
+                    ...Component need to render goes here....
+                <>
+            )}
+        </div>
     }
+}
 ```
 
 ### 2. Using Component
 
 The above same can achieved through Component as well. Need to wrap ```LazyLoad``` on top of the component for lazyloading
 
-```
-    import { LazyLoad } from 'react-lazyloading';
+```jsx
+import { LazyLoad } from 'react-lazyloading';
 
-    export default () => {
-        
-        return {
-            <LazyLoad>
-                <>...Component goes here....</>
-            </LazyLoad>
-        }
+export default () => {
+    
+    return {
+        <LazyLoad>
+            <>...Component goes here....</>
+        </LazyLoad>
     }
+}
 ```
 
 #### Optional Props
@@ -115,19 +123,19 @@ The above same can achieved through Component as well. Need to wrap ```LazyLoad`
 
 #### Example
 
-```
-    import { LazyLoad } from 'react-lazyloading';
+```jsx
+import { LazyLoad } from 'react-lazyloading';
 
-    export default () => {
-        const style = {
-            padding: 10
-        };
-        return {
-            <LazyLoad as="span" style={style} forceVisible>
-                <>...Component goes here....</>
-            </LazyLoad>
-        }
+export default () => {
+    const style = {
+        padding: 10
+    };
+    return {
+        <LazyLoad as="span" style={style} forceVisible>
+            <>...Component goes here....</>
+        </LazyLoad>
     }
+}
 ```
 
 ## Note
@@ -135,7 +143,7 @@ For IE support, need to add [polyfill](https://github.com/w3c/IntersectionObserv
 
 You can import the polyfill directly or use a service like polyfill.io to add it when needed.
 ```
-yarn add intersection-observer
+npm i intersection-observer
 ```
 Then import it in your app:
 ```

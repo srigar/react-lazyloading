@@ -1,4 +1,3 @@
-_layouts
 node_modules
-_config.yml
+src
 webpack.config.js

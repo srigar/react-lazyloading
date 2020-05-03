@@ -1,7 +1,7 @@
 {
   "name": "react-observer-api",
-  "version": "1.0.2",
-  "description": "React lazy loading component",
+  "version": "1.0.3",
+  "description": "React lazy loading component, images, etc.It will monitor element and tell you when element enters into the viewport.",
   "main": "build/index.js",
   "scripts": {
     "dev": "webpack-dev-server",
@@ -22,10 +22,10 @@
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
-    "uglifyjs-webpack-plugin": "^2.1.2",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
-    "webpack-dev-server": "^3.2.1"
+    "webpack-dev-server": "^3.10.3"
   },
   "babel": {
     "presets": [
