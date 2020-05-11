@@ -1,5 +1,12 @@
 # REACT LAZY LOAD 
-React Lazy Loading - It is easy to integrate with React to Lazyload components, Images, etc. It will monitor element and tell you when element enters into the viewport. So that can perform any operation when the component in viewport and initial load will get reduce. Implementing "infinite scrolling" web sites, where more and more content is loaded and rendered as you scroll, so that the user doesn't have to flip through pages. Internally used [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
+
+![Version](https://img.shields.io/npm/v/react-observer-api?style=for-the-badge) ![License](https://img.shields.io/npm/l/react-observer-api?style=for-the-badge) ![Size](https://img.shields.io/bundlephobia/minzip/react-observer-api?style=for-the-badge)  ![Tweet](https://img.shields.io/twitter/url?style=for-the-badge&url=https%3A%2F%2Ftwitter.com%2Fssrigar)    
+
+
+**React Lazy Loading** - It is easy to integrate with React to Lazyload components, Images, etc. It will monitor element and tell you when element enters into the viewport. So that can perform any operation when the component in viewport and initial load will get reduce. Implementing "infinite scrolling" web sites, where more and more content is loaded and rendered as you scroll, so that the user doesn't have to flip through pages.  
+Internally used [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
+
+💥💥💥 **React library for Multiselect Dropdown. [Check it Out](https://github.com/srigar/multiselect-react-dropdown)** 💥💥💥
 
 ## Features
 * 🎧 **Hooks or Component** - With ```useVisibilityHook``` it's easier to monitor elements and perform any operations.

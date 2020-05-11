@@ -1,6 +1,6 @@
 {
   "name": "react-observer-api",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "React lazy loading component, images, etc.It will monitor element and tell you when element enters into the viewport.",
   "main": "build/index.js",
   "scripts": {
