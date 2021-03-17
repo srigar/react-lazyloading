@@ -27,7 +27,7 @@ npm install --save react-observer-api
 ```isVisible``` will be true once DOM is visible in the viewport.  
 ```setElement``` need to pass it to the ref as shown below.  
 ```jsx
-import { useVisibilityHook } from 'react-lazyloading';
+import { useVisibilityHook } from 'react-observer-api';
 
 export default () => {
     const { setElement, isVisible } = useVisibilityHook();
@@ -65,7 +65,7 @@ It allow to pass config options as param (optional).
 For more details about options and usage, [Click here](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#Intersection_observer_concepts_and_usage) 
 
 ```jsx
-import { useVisibilityHook } from 'react-lazyloading';
+import { useVisibilityHook } from 'react-observer-api';
 
 export default () => {
     const { setElement, isVisible } = useVisibilityHook({
@@ -81,7 +81,7 @@ export default () => {
 For some case, based on condition/logic may need to show the dom before it reaches to viewport. In that scenario, by calling ```forceVisible()``` will load the dom.
 
 ```jsx
-import { useVisibilityHook } from 'react-lazyloading';
+import { useVisibilityHook } from 'react-observer-api';
 
 export default () => {
     const { setElement, isVisible, forceVisible } = useVisibilityHook();
@@ -107,7 +107,7 @@ export default () => {
 The above same can achieved through Component as well. Need to wrap ```LazyLoad``` on top of the component for lazyloading
 
 ```jsx
-import { LazyLoad } from 'react-lazyloading';
+import { LazyLoad } from 'react-observer-api';
 
 export default () => {
     
@@ -130,7 +130,7 @@ export default () => {
 #### Example
 
 ```jsx
-import { LazyLoad } from 'react-lazyloading';
+import { LazyLoad } from 'react-observer-api';
 
 export default () => {
     const style = {
