@@ -13,15 +13,17 @@
     "type": "git",
     "url": "https://github.com/srigar/react-lazyloading"
   },
-  "dependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+  "peerDependencies": {
+    "react": ">= ^16.8.0",
+    "react-dom": ">= ^16.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
