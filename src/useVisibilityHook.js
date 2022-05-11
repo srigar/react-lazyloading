@@ -21,7 +21,9 @@ const useVisibilityHook = (options = {}, visible = false) => {
     };
 
     const visibilityCallBack = ([entry]) => {
-        if (entry.isIntersecting) {
+        if (options.always) {
+            setIsVisible(entry.isIntersecting);
+        } else if (entry.isIntersecting) {
             setIsVisible(true);
             observer.disconnect();
         }
