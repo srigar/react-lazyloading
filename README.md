@@ -58,7 +58,8 @@ It allow to pass config options as param (optional).
 {
     root: null,
     rootMargin: '0px',
-    threshold: 1.0
+    threshold: 1.0,
+    always: false
 }
 ```
 
@@ -70,15 +71,27 @@ import { useVisibilityHook } from 'react-observer-api';
 export default () => {
     const { setElement, isVisible } = useVisibilityHook({
         threshold: 0.5,
-        rootMargin: '100px'
+        rootMargin: '100px',
+        always: false
     });
     ...
 }
 ```
 
+#### Always Observe
+
+For some cases, you may want to continue to observe the dom node as it enters and exits the viewport. In this scenario, passing ```always: true``` in the config will enable this.
+
+```jsx
+useVisibilityHook({ always: true });
+
+<LazyLoad config={{ always: true }}>
+```
+
 #### Force Visible
 
 For some case, based on condition/logic may need to show the dom before it reaches to viewport. In that scenario, by calling ```forceVisible()``` will load the dom.
+
 
 ```jsx
 import { useVisibilityHook } from 'react-observer-api';
@@ -122,7 +135,7 @@ export default () => {
 #### Optional Props
 | prop        | Type | Default  | Description |
 | ------------- |-----| -----| ----------- |
-| options      | object | { root: null, threshold: 0.25, rootMargin: '-10px' } | [Click for more usage about options](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#Intersection_observer_concepts_and_usage)|
+| options      | object | { root: null, threshold: 0.25, rootMargin: '-10px', always: false } | [Click for more usage about options](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#Intersection_observer_concepts_and_usage)|
 | as     | string      |   div | Wrapper element can be change by passing valid tag name. Ex: span / p / div |
 | style | object     |    {} | Custom CSS for wrapper element|
 | forceVisible | boolean     |    false | Passing true to render dom without waiting to reach the viewport|
