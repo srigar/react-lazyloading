@@ -3,7 +3,8 @@ import { useState, useEffect } from 'react';
 const defaultConfig = {
   root: null,
   threshold: 1.0,
-  rootMargin: '0px'
+  rootMargin: '0px',
+  always: false
 };
 
 const useVisibilityHook = (options = {}, visible = false) => {
